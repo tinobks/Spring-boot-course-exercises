@@ -7,18 +7,14 @@ package com.example.es2;
 //    "saluto": "Ciao Giuseppe, com'è il tempo in Lombardia?"
 //}
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/v2")
 public class CiaoLombardiaControllerV2 {
 
-    @GetMapping(path = "/ciao/Lombardia")
-    public UserV2 ciao(@RequestParam String nome) {
-        String provincia = "Lombardia";
+    @GetMapping(path = "/ciao/{provincia}")
+    public UserV2 ciao(@PathVariable String provincia, @RequestParam String nome) {
         String saluto = "Ciao " + nome + ", com'è il tempo in " + provincia + "?";
         return new UserV2(nome, provincia, saluto);
     }
