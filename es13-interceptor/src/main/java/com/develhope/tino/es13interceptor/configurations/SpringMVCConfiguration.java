@@ -20,6 +20,6 @@ public class SpringMVCConfiguration implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(apiLoggingInterceptor);
-        registry.addInterceptor(legacyInterceptor).addPathPatterns("/legacy/**");
+        registry.addInterceptor(legacyInterceptor);
     }
 }
