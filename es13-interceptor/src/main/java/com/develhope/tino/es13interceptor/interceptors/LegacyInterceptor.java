@@ -11,8 +11,9 @@ import org.springframework.web.servlet.ModelAndView;
 public class LegacyInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        response.setStatus(HttpStatus.GONE.value());
-        return HandlerInterceptor.super.preHandle(request, response, handler);
+        response.setStatus(HttpServletResponse.SC_GONE);
+        response.getWriter().write("Legacy API is no longer supported");
+        return false;
     }
 
     @Override
