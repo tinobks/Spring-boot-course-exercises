@@ -18,7 +18,7 @@ public class FlightController {
 
     @GetMapping("/all")
     public ResponseEntity<List<Flight>> getAll() {
-        return ResponseEntity.ok(flightService.getAll());
+        return ResponseEntity.ok(flightService.all());
     }
 
     @PostMapping("/provision50flights")

@@ -14,8 +14,8 @@ public class FlightService {
     @Autowired
     private FlightRepository flightRepository;
 
-    public List<Flight> getAll() {
-        return flightRepository.findAll();
+    public List<Flight> all() {
+        return flightRepository.getAll();
     }
 
     //create a random flight
