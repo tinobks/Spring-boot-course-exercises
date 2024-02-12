@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @RequestMapping("/time")
 public class BasicController {
 
-    @GetMapping("")
+    @GetMapping
     public LocalDateTime currentDateTime() {
         return LocalDateTime.now();
     }
